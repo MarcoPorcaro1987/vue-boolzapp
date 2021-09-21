@@ -6,7 +6,7 @@
 
 body{
     height: 100vh;
-    background: linear-gradient(#009688 50%,  #dadbd3 50%);
+    background: linear-gradient(to bottom,#009688 0, #009688 15vh,  #dadbd3 15vh, #dadbd3 100vh);
     padding: 30px;
     font-family: 'Lato', sans-serif;
 }
