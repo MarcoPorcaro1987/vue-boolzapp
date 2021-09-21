@@ -23,7 +23,7 @@
                         <div class="user-title">
                             <div class="user-cont">
                                 <img src="/img/avatar_io.jpg" alt="User">
-                                <span>Nome Utente</span>
+                                <span>User</span>
                             </div>
                             <div class="icon-user-cont">
                                 <i class="fas fa-circle-notch"></i>
@@ -31,6 +31,18 @@
                                 <i class="fas fa-ellipsis-v"></i>
                             </div>
                         </div>
+                    </div>
+                    <div class="notifications-cont">
+                        <i class="fas fa-bell-slash"></i>
+                        <p> <span class="receive-not-text"> Ricevi notifiche di nuovi messaggi</span> <br> <span class="activation-not-text">Attiva notifiche desktop</span> </p>
+                    </div>
+                    <div class="input-cont">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" placeholder="Search or start new chat">
+                    </div>
+                    <div v-for = "(contact, index) in contacts" :key="index" class="contacts-cont">
+                        <img :src =" 'img/avatar' + contact.avatar + '.jpg'" alt="">
+                        <span>{{contact.name}}</span>
                     </div>
 
                 </aside>

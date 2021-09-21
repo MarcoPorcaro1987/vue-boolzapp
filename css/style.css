@@ -48,8 +48,65 @@ img{
 
 span{
     font-size: small;
+    font-weight: 700;
 }
 
-i{
+aside i{
     color:#b1b1b1;
+}
+
+.notifications-cont{
+    height: 60px;
+    background-color: #8edafc;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.fa-bell-slash{
+    background-color: white;
+    color:#8edafc;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.activation-not-text{
+    font-size: 10px;
+    text-decoration: underline;
+    color: #4f7485;
+}
+
+.input-cont{
+    padding: 10px;
+    color: #4f7485;
+    display: flex;
+    margin: auto;
+}
+
+.input-cont input {
+    padding: 10px;
+    font-size: 12px;
+    width: 80%;
+    background: white;
+    border-style: none;
+}
+
+.input-cont button {
+    width: 20%;
+    padding: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    border-style: none;
+    background: white;
+}
+
+.contacts-cont {
+    background-color: white;
+    padding:10px;
+    border-bottom: 1px solid #e9ebeb;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    overflow-y: auto;
 }
