@@ -6,7 +6,7 @@
 
 body{
     height: 100vh;
-    background-image: linear-gradient(#009688,  #dadbd3);
+    background: linear-gradient(#009688 50%,  #dadbd3 50%);
     padding: 30px;
     font-family: 'Lato', sans-serif;
 }
@@ -25,7 +25,11 @@ aside{
 
 main{
     width: 70%;
-    background-color: black;
+    background-color: #eaeaea;
+}
+
+.head-left .user-title{
+    border-right: 1px solid #d6d6d6;;
 }
 
 .user-title{
@@ -51,7 +55,7 @@ span{
     font-weight: 700;
 }
 
-aside i{
+.icon-user-cont i {
     color:#b1b1b1;
 }
 
@@ -84,12 +88,14 @@ aside i{
     margin: auto;
 }
 
-.input-cont input {
+input {
     padding: 10px;
     font-size: 12px;
     width: 80%;
     background: white;
     border-style: none;
+    border-top-right-radius:  5px;
+    border-bottom-right-radius:  5px;
 }
 
 .input-cont button {
@@ -99,14 +105,82 @@ aside i{
     cursor: pointer;
     border-style: none;
     background: white;
+    border-top-left-radius:  5px;
+    border-bottom-left-radius:  5px;
+}
+
+.fa-search{
+    color: #b1b1b1;
 }
 
 .contacts-cont {
+    background-color: white;
+    height: calc(100% - 173.6px);
+    overflow-y: scroll;
+}
+
+.contacts-item {
     background-color: white;
     padding:10px;
     border-bottom: 1px solid #e9ebeb;
     display: flex;
     gap:10px;
     align-items: center;
-    overflow-y: auto;
+}
+
+.last-access-text{
+    font-size: 10px;
+    color: #4f7485;
+}
+
+.chat-cont{
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 120px);
+    padding: 30px 60px 0 60px;
+    overflow-y: scroll;
+}
+
+.msg-cont {
+   width: 30%;
+   margin-bottom: 10px;
+   padding: 8px;
+   border-radius: 10px;
+}
+
+.sent-msg{
+    background-color: #d5f9ba;
+    margin-left: calc(80% - 70px);
+}
+
+.received-msg{
+    background-color: white;
+}
+
+.chat-text {
+    font-size: 12px;
+}
+
+.date-text {
+    font-size: 8px;
+    text-align: right;
+    margin-top:2px;
+    color: #dddedf;
+}
+
+.typing-cont {
+    height: 60px;
+    display: flex;
+    padding: 10px 30px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3eeea;
+}
+
+.typing-cont input{
+    border-radius: 5px;
+}
+
+.typing-cont i {
+    color:#6b7376;
+    font-size: 20px;
 }
