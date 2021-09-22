@@ -76,7 +76,7 @@
                 </div> 
                 <div class="typing-cont">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" @keyup.enter="typeMessage()">
                     <i class="fas fa-microphone"></i>
                 </div>
             </main>

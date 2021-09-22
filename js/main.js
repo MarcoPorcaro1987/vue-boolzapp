@@ -41,7 +41,7 @@ var app = new Vue({
 					{
 						date: '20/03/2020 16:35:00',
 						message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-						status: 'sent'
+						status: 'received'
 					}
 				],
 			},
@@ -83,11 +83,22 @@ var app = new Vue({
 				],
 			},
 		],
-		contactIndex: 0
+		contactIndex: 0,
+		newMessage : ""
   	},
 	methods:{
 		changeContact: function(index){
 			this.contactIndex = index;			
 		},
+		typeMessage: function(){
+			if(this.newMessage != ""){
+				this.contacts[this.contactIndex].messages.push({
+					date: '10/01/2020 15:50:00',
+					message: this.newMessage, 
+					status: 'sent'
+				});
+				this.newMessage = ""
+			}
+		}
     }
 });
