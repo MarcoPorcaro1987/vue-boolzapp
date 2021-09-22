@@ -16,72 +16,70 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div id="root">
-            <div class="container">
-                <aside>
-                    <div class="head-left">
-                        <div class="user-title">
-                            <div class="user-cont">
-                                <img src="/img/avatar_io.jpg" alt="User">
-                                <span>Utente</span>
-                            </div>
-                            <div class="icon-user-cont">
-                                <i class="fas fa-circle-notch"></i>
-                                <i class="fas fa-comment-alt"></i>
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
+        <div id="root" class="container">
+            <aside>
+                <div class="head-left">
+                    <div class="user-title">
+                        <div class="user-cont">
+                            <img src="img/avatar_io.jpg" alt="User">
+                            <span>Utente</span>
+                        </div>
+                        <div class="icon-user-cont">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                    <div class="notifications-cont">
-                        <i class="fas fa-bell-slash"></i>
-                        <p> <span class="receive-not-text"> Ricevi notifiche di nuovi messaggi</span> <br> <span class="activation-not-text">Attiva notifiche desktop</span> </p>
+                </div>
+                <div class="notifications-cont">
+                    <i class="fas fa-bell-slash"></i>
+                    <p> <span class="receive-not-text"> Ricevi notifiche di nuovi messaggi</span> <br> <span class="activation-not-text">Attiva notifiche desktop</span> </p>
+                </div>
+                <div class="input-cont">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="contacts-cont">
+                    <div v-for = "(contact, index) in contacts" 
+                    :key="index" 
+                    class="contacts-item" 
+                    @click="changeContact(index)" 
+                    :class="index == contactIndex ? 'active' : null">
+                        <img :src =" 'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
+                        <span>{{contact.name}}</span>
                     </div>
-                    <div class="input-cont">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
-                    </div>
-                    <div class="contacts-cont">
-                        <div v-for = "(contact, index) in contacts" :key="index" class="contacts-item">
-                            <img :src =" 'img/avatar' + contact.avatar + '.jpg'" alt="">
-                            <span>{{contact.name}}</span>
+                </div>
+            </aside>
+            <main>
+                <div class="head-right">
+                    <div class="user-title">
+                        <div class="user-cont">
+                            <img src="img/avatar_io.jpg" alt="User">
+                            <span>Utente <br> <span class="last-access-text">Ultimo accesso oggi alle</span></span>
+                        </div>
+                        <div class="icon-user-cont">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
                         </div>
                     </div>
-                </aside>
-                <main>
-                    <div class="head-right">
-                        <div class="user-title">
-                            <div class="user-cont">
-                                <img src="/img/avatar_io.jpg" alt="User">
-                                <span>Utente <br> <span class="last-access-text">Ultimo accesso oggi alle</span></span>
-                            </div>
-                            <div class="icon-user-cont">
-                                <i class="fas fa-circle-notch"></i>
-                                <i class="fas fa-paperclip"></i>
-                                <i class="fas fa-ellipsis-v"></i>
-                            </div>
-                        </div>
+                </div>
+                <div class="chat-cont" >
+                    <div class="msg-cont" v-for="(message, index) in contacts[contactIndex].messages" :class="contacts[contactIndex].messages[index].status == 'sent' ? 'sent-msg': null">
+                        <p class="chat-text">{{Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, consequatur dolor libero, ratione laborum unde minima at sed voluptas iure qui, dignissimos aspernatur totam maiores minus aliquid quasi deserunt accusamus.}}</p>
+                        <p class="date-text">data</p>
                     </div>
-                    <div class="chat-cont">
-                        <div class="sent-msg msg-cont">
-                            <p class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias magnam eos consequuntur neque facere. Et veniam, exercitationem, asperiores nemo perspiciatis cum facilis expedita eveniet, id dicta animi itaque laborum deserunt?</p>
-                            <p class="date-text">28/03/2020 16:15:22</p>
-                        </div>
-                        <div class="received-msg msg-cont">
-                            <p class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias magnam eos consequuntur neque facere. Et veniam, exercitationem, asperiores nemo perspiciatis cum facilis expedita eveniet, id dicta animi itaque laborum deserunt?</p>
-                            <p class="date-text">28/03/2020 16:15:22</p>
-                        </div>
-                    </div> 
-                    <div class="typing-cont">
-                        <i class="far fa-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                </main>
-            </div>
+                </div> 
+                <div class="typing-cont">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                </div>
+            </main>
         </div>
         <!-- Vue Js Script -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- /Vue Js Script -->
-        <script src="js/contacts.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

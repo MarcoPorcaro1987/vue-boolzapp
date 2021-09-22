@@ -14,16 +14,18 @@ body{
 .container{
     margin: auto;
     width: 80%;
-    height: 650px;
     display: flex;
+    height: 95%;
 }
 
 aside{
     width: 30%;
     background-color: #eaeaea;
+    height: 100%;
 }
 
 main{
+    height: 100%;
     width: 70%;
     background-color: #eaeaea;
 }
@@ -83,7 +85,7 @@ span{
 
 .input-cont{
     padding: 10px;
-    color: #4f7485;
+    background-color: #fafafa;
     display: flex;
     margin: auto;
 }
@@ -91,9 +93,9 @@ span{
 input {
     padding: 10px;
     font-size: 12px;
-    width: 80%;
+    width: 85%;
     background: white;
-    border-style: none;
+    border: 1px solid #f5f5f5;
     border-top-right-radius:  5px;
     border-bottom-right-radius:  5px;
 }
@@ -103,7 +105,7 @@ input {
     padding: 10px;
     font-size: 12px;
     cursor: pointer;
-    border-style: none;
+    border: 1px solid #f5f5f5;
     background: white;
     border-top-left-radius:  5px;
     border-bottom-left-radius:  5px;
@@ -128,6 +130,10 @@ input {
     align-items: center;
 }
 
+.active {
+    background-color: #e9ebeb;
+}
+
 .last-access-text{
     font-size: 10px;
     color: #4f7485;
@@ -135,8 +141,8 @@ input {
 
 .chat-cont{
     background-image: url(../img/mine.jpg);
+    padding: 50px 60px 0;
     height: calc(100% - 120px);
-    padding: 30px 60px 0 60px;
     overflow-y: scroll;
 }
 
@@ -145,6 +151,7 @@ input {
    margin-bottom: 10px;
    padding: 8px;
    border-radius: 10px;
+   background-color: white;
 }
 
 .sent-msg{
@@ -152,9 +159,6 @@ input {
     margin-left: calc(80% - 70px);
 }
 
-.received-msg{
-    background-color: white;
-}
 
 .chat-text {
     font-size: 12px;
@@ -170,7 +174,7 @@ input {
 .typing-cont {
     height: 60px;
     display: flex;
-    padding: 10px 30px;
+    padding: 10px 40px;
     align-items: center;
     justify-content: space-between;
     background-color: #f3eeea;
