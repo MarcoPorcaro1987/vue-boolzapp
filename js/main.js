@@ -41,7 +41,7 @@ var app = new Vue({
 					{
 						date: '20/03/2020 16:35:00',
 						message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-						status: 'received'
+						status: 'sent'
 					}
 				],
 			},
@@ -84,12 +84,21 @@ var app = new Vue({
 			},
 		],
 		contactIndex: 0,
-		newMessage : ""
+		newMessage : "",
+		cpuMessage : "ok"
   	},
 	methods:{
 		changeContact: function(index){
 			this.contactIndex = index;			
 		},
+		cpuTypeMessage: function (){
+			this.contacts[this.contactIndex].messages.push(
+			{
+			date: '10/01/2020 15:50:00',
+			message: this.cpuMessage, 
+			status: 'received'
+			}
+		)},
 		typeMessage: function(){
 			if(this.newMessage != ""){
 				this.contacts[this.contactIndex].messages.push({
@@ -97,7 +106,8 @@ var app = new Vue({
 					message: this.newMessage, 
 					status: 'sent'
 				});
-				this.newMessage = ""
+				this.newMessage = "";
+				setTimeout(() => this.cpuTypeMessage(), 1000);
 			}
 		}
     }
