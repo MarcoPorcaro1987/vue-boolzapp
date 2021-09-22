@@ -117,7 +117,7 @@ input {
 
 .contacts-cont {
     background-color: white;
-    height: calc(100% - 173.6px);
+    height: calc(100% - 175.6px);
     overflow-y: scroll;
 }
 

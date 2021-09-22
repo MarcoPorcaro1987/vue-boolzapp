@@ -65,9 +65,13 @@
                     </div>
                 </div>
                 <div class="chat-cont" >
-                    <div class="msg-cont" v-for="(message, index) in contacts[contactIndex].messages" :class="contacts[contactIndex].messages[index].status == 'sent' ? 'sent-msg': null">
-                        <p class="chat-text">{{contacts[contactIndex].messages[index].message}}</p>
-                        <p class="date-text">{{contacts[contactIndex].messages[index].date}}</p>
+                    <div 
+                    class="msg-cont" 
+                    v-for="(message, index) in contacts[contactIndex].messages" 
+                    :key="index" 
+                    :class="contacts[contactIndex].messages[index].status == 'sent' ? 'sent-msg': null">
+                        <p class="chat-text">{{message.message}}</p>
+                        <p class="date-text">{{message.date}}</p>
                     </div>
                 </div> 
                 <div class="typing-cont">
