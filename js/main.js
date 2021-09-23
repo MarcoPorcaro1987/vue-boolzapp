@@ -85,30 +85,47 @@ var app = new Vue({
 		],
 		contactIndex: 0,
 		newMessage : "",
-		cpuMessage : "ok"
+		cpuMessage : "ok",
+		search: ""
   	},
 	methods:{
 		changeContact: function(index){
 			this.contactIndex = index;			
 		},
-		cpuTypeMessage: function (){
-			this.contacts[this.contactIndex].messages.push(
-			{
-			date: '10/01/2020 15:50:00',
-			message: this.cpuMessage, 
-			status: 'received'
-			}
-		)},
+
 		typeMessage: function(){
 			if(this.newMessage != ""){
-				this.contacts[this.contactIndex].messages.push({
-					date: '10/01/2020 15:50:00',
+				let userType = {
+					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 					message: this.newMessage, 
 					status: 'sent'
-				});
+				}
+				this.contacts[this.contactIndex].messages.push(userType);
 				this.newMessage = "";
 				setTimeout(() => this.cpuTypeMessage(), 1000);
 			}
-		}
+		},
+
+		cpuTypeMessage: function (){
+			let cpuType = 
+			{
+				date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+				message: this.cpuMessage, 
+				status: 'received'
+				}
+			this.contacts[this.contactIndex].messages.push(cpuType)
+		},
+		
+		searchContact: function () {
+            this.contacts.forEach((contact) => {
+                let UCName = contact.name.toUpperCase();
+				let LCName = contact.name.toLowerCase();
+                if  (UCName.includes(this.search) || LCName.includes(this.search)  ) {
+                    contact.visible = true;
+                } else {
+                    contact.visible = false;    
+                }
+            });
+        },
     }
 });

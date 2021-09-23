@@ -37,13 +37,16 @@
                 </div>
                 <div class="input-cont">
                     <button type="submit"><i class="fa fa-search"></i></button>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" 
+                    placeholder="Cerca o inizia una nuova chat" 
+                    v-model="search" @input="searchContact()">
                 </div>
                 <div class="contacts-cont">
                     <div v-for = "(contact, index) in contacts" 
                     :key="index" 
                     class="contacts-item" 
                     @click="changeContact(index)" 
+                    v-if="contact.visible"
                     :class="index == contactIndex ? 'active' : null">
                         <img :src =" 'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         <span>{{contact.name}}</span>
@@ -54,7 +57,8 @@
                 <div class="head-right">
                     <div class="user-title">
                         <div class="user-cont">
-                            <img :src="'img/avatar'+ contacts[contactIndex].avatar +'.jpg'" :alt="contacts[contactIndex].name" alt="contacts[contactIndex].name">
+                            <img :src="'img/avatar'+ contacts[contactIndex].avatar +'.jpg'" 
+                            :alt="contacts[contactIndex].name">
                             <span>{{contacts[contactIndex].name}} <br> <span class="last-access-text">Ultimo accesso oggi alle 14:23</span></span>
                         </div>
                         <div class="icon-user-cont">
@@ -81,6 +85,10 @@
                 </div>
             </main>
         </div>
+         <!-- Date.js -->
+         <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+         <script>dayjs().format()</script>
+         <!-- /Date.js -->
         <!-- Vue Js Script -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- /Vue Js Script -->

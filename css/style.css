@@ -156,7 +156,7 @@ input {
 
 .sent-msg{
     background-color: #d5f9ba;
-    margin-left: calc(80% - 70px);
+    margin-left: auto;
 }
 
 
