@@ -115,12 +115,12 @@ var app = new Vue({
 				}
 			this.contacts[this.contactIndex].messages.push(cpuType)
 		},
-		
+
 		searchContact: function () {
             this.contacts.forEach((contact) => {
                 let UCName = contact.name.toUpperCase();
 				let LCName = contact.name.toLowerCase();
-                if  (UCName.includes(this.search) || LCName.includes(this.search)  ) {
+                if  (UCName.includes(this.search) || LCName.includes(this.search)) {
                     contact.visible = true;
                 } else {
                     contact.visible = false;    

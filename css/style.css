@@ -91,6 +91,7 @@ span{
 }
 
 input {
+    outline: none;
     padding: 10px;
     font-size: 12px;
     width: 85%;
@@ -152,6 +153,7 @@ input {
    padding: 8px;
    border-radius: 10px;
    background-color: white;
+   word-break: break-all;
 }
 
 .sent-msg{

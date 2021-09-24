@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="chat-cont" >
+                <div class="chat-cont" v-chat-scroll="{always: false, smooth: true}">
                     <div 
                     class="msg-cont" 
                     v-for="(message, index) in contacts[contactIndex].messages" 
@@ -92,6 +92,10 @@
         <!-- Vue Js Script -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- /Vue Js Script -->
+        <!--Scroll Vue Js Script-->
+        <script src="https://cdn.jsdelivr.net/npm/vue-chat-scroll/dist/vue-chat-scroll.min.js"></script>
+        <!--Scroll Vue Js Script-->
         <script src="js/main.js"></script>
     </body>
 </html>
+
